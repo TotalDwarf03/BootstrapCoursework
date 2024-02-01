@@ -1,0 +1,21 @@
+#ThemeControls {
+    
+}
+
+#BatterySocket {
+    float: right;
+
+    width: 100px;
+    height: 40px;
+    border: solid 1px;
+
+    margin: 10px;
+
+    text-align: center;
+}
+
+#Battery {
+    margin: 10px;
+
+    font-size: 40px;
+}

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
     <head>
         <title>Title</title>
         <meta charset="utf-8" />
@@ -22,11 +22,87 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+
+        <!-- Font Awesome 4 Library -->
+        <link 
+            rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+
+        <!-- My CSS -->
+        <link
+            href="css.css"
+            rel="stylesheet"
+        />
+
+        <!-- My Scripts -->
+        <script>
+            // Theme Controller
+            function toggleTheme(){
+                // Get current theme
+                theme = document.documentElement.getAttribute("data-bs-theme");
+
+                if(theme == "dark"){
+                    document.documentElement.setAttribute("data-bs-theme", "light");
+                }
+                else{
+                    document.documentElement.setAttribute("data-bs-theme", "dark");
+                }
+            }
+
+            // Drag and Drop
+            function allowDrop(event){
+                event.preventDefault();
+            }
+
+            function drag(event) {
+                event.dataTransfer.setData("text", event.target.id);
+            }
+
+            function drop(event){
+                event.preventDefault();
+                var data = event.dataTransfer.getData("text");
+                var element = document.getElementById(data)
+                event.target.appendChild(element);
+                element.style.margin = "auto";
+                toggleTheme();
+            }
+        </script>
     </head>
 
     <body>
         <header>
-            <!-- place navbar here -->
+            <nav class="navbar fixed-top">
+                <a class="navbar-brand" href="#">WebsiteName</a>
+
+                <div id="ThemeControls">
+                    <i id="Battery" class="fa fa-battery-full" draggable="true" ondragstart="drag(event)"></i>
+
+                    <div id="BatterySocket" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+                    </div>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                    </div>
+                </div>              
+            </nav>
         </header>
         <main>
 
