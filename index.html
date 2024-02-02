@@ -38,15 +38,24 @@
         <!-- My Scripts -->
         <script>
             // Theme Controller
-            function toggleTheme(){
+            function toggleTheme(element){
                 // Get current theme
                 theme = document.documentElement.getAttribute("data-bs-theme");
+                socketicon = document.getElementById("socketicon");
 
                 if(theme == "dark"){
+                    let lightOn = new Audio("Audio/lightOn.wav");
+                    lightOn.play();
+
                     document.documentElement.setAttribute("data-bs-theme", "light");
+                    socketicon.hidden = true;
                 }
                 else{
+                    let lightOff = new Audio("Audio/lightOff.wav");
+                    lightOff.play();
+
                     document.documentElement.setAttribute("data-bs-theme", "dark");
+                    socketicon.hidden = false;
                 }
             }
 
@@ -63,9 +72,13 @@
                 event.preventDefault();
                 var data = event.dataTransfer.getData("text");
                 var element = document.getElementById(data)
-                event.target.appendChild(element);
-                element.style.margin = "auto";
-                toggleTheme();
+                if (event.target.id == "socketicon"){
+                    event.target.parentElement.appendChild(element);
+                }
+                else {
+                    event.target.appendChild(element);
+                }
+                toggleTheme(element);
             }
         </script>
     </head>
@@ -75,11 +88,13 @@
             <nav class="navbar fixed-top">
                 <a class="navbar-brand" href="#">WebsiteName</a>
 
-                <div id="ThemeControls">
-                    <i id="Battery" class="fa fa-battery-full" draggable="true" ondragstart="drag(event)"></i>
+                <div id="ThemeControls" class="border">
+                    <div id="BatteryHolder" class="BatteryContainer border" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <i id="Battery" class="fa fa-battery-full" draggable="true" ondragstart="drag(event)"></i>
+                    </div>
 
-                    <div id="BatterySocket" ondrop="drop(event)" ondragover="allowDrop(event)">
-
+                    <div id="BatterySocket" class="BatteryContainer border" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <i id="socketicon" class="fa fa-bolt"></i>
                     </div>
                 </div>
 
@@ -93,6 +108,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
+
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>

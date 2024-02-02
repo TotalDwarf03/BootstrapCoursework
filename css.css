@@ -2,12 +2,11 @@
     
 }
 
-#BatterySocket {
+.BatteryContainer {
     float: right;
 
     width: 100px;
-    height: 40px;
-    border: solid 1px;
+    height: 32px;
 
     margin: 10px;
 
@@ -15,7 +14,9 @@
 }
 
 #Battery {
-    margin: 10px;
+    font-size: 32px;
+}
 
-    font-size: 40px;
+#socketicon {
+    font-size: 32px;
 }
