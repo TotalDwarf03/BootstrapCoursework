@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
     <head>
-        <title>Title</title>
+        <title>TotalDwarf.dev - Home</title>
         <meta charset="utf-8" />
         <meta
             name="viewport"
@@ -29,6 +29,9 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         />
 
+        <!-- Bootstrap Icon Library -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
         <!-- My CSS -->
         <link
             href="css.css"
@@ -37,8 +40,29 @@
 
         <!-- My Scripts -->
         <script>
+            window.onload = function(){
+                // Once windows loaded:
+
+                // Check Local Storage API Support
+                initialiseSessionStorage();
+
+                // Check Drag and Drop API Support
+                if(dragDropSupportCheck()){
+                    document.getElementById("switchThemeControls").hidden = true;
+
+                    // Used to test no support
+                    // document.getElementById("dragDropThemeControls").hidden = true;
+                }
+                else{
+                    document.getElementById("dragDropThemeControls").hidden = true;
+
+                    // Used to test no support
+                    // document.getElementById("switchThemeControls").hidden = true;
+                }
+            }
+
             // Theme Controller
-            function toggleTheme(element){
+            function toggleThemeDD(element){
                 // Get current theme
                 theme = document.documentElement.getAttribute("data-bs-theme");
                 socketicon = document.getElementById("socketicon");
@@ -47,19 +71,101 @@
                     let lightOn = new Audio("Audio/lightOn.wav");
                     lightOn.play();
 
+                    // Change theme and apply to Session Storage if supported
                     document.documentElement.setAttribute("data-bs-theme", "light");
+                    
+                    if(storageSupportCheck){
+                        sessionStorage.theme = "light";
+                    }
+                    
                     socketicon.hidden = true;
                 }
                 else{
                     let lightOff = new Audio("Audio/lightOff.wav");
                     lightOff.play();
 
+                    // Change theme and apply to Session Storage if supported
                     document.documentElement.setAttribute("data-bs-theme", "dark");
+                    
+                    if(storageSupportCheck){
+                        sessionStorage.theme = "dark";
+                    }
+
                     socketicon.hidden = false;
                 }
             }
 
+            function toggleThemeSwitch(){
+                // Get current theme
+                theme = document.documentElement.getAttribute("data-bs-theme");
+
+                if(theme == "dark"){
+                    // Change theme and apply to Session Storage if supported
+                    document.documentElement.setAttribute("data-bs-theme", "light");
+                    
+                    if(storageSupportCheck){
+                        sessionStorage.theme = "light";
+                    }
+
+                    // Change theme icon
+                    document.getElementById("themeIcon").className = "fa fa-sun-o";
+                }
+                else{
+                    // Change theme and apply to Session Storage if supported
+                    document.documentElement.setAttribute("data-bs-theme", "dark");
+                    
+                    if(storageSupportCheck){
+                        sessionStorage.theme = "dark";
+                    }
+
+                    // Change theme icon
+                    document.getElementById("themeIcon").className = "fa fa-moon-o";
+                }
+            }
+
+            // Web Storage
+            function storageSupportCheck(){
+                return typeof(Storage) !== "undefined" ? true : false;
+            }
+
+            /**
+             * Initialises Session Storage
+             * 
+             * Called once HTML header is loaded
+             */
+            function initialiseSessionStorage(){
+                if(storageSupportCheck()){
+                    if(sessionStorage.theme == "dark"){
+                        document.documentElement.setAttribute("data-bs-theme", "dark");
+                    }
+                    else if(sessionStorage.theme == "light"){
+                        document.documentElement.setAttribute("data-bs-theme", "light");
+    
+                        // Also need to manually move drag and drop
+                        battery = document.getElementById("Battery");
+                        socketicon = document.getElementById("socketicon");
+                        batterysocket = document.getElementById("BatterySocket");
+    
+                        batterysocket.appendChild(battery);
+                        socketicon.hidden = true;
+
+                        // Also check theme switch and change label icon
+                        document.getElementById("themeSwitch").checked = true;
+                        document.getElementById("themeIcon").className = "fa fa-sun-o";
+
+                    }
+                    else{
+                        // If SessionStorage.theme isn't set, initialise it as dark to match default
+                        sessionStorage.theme = "dark";
+                    }
+                }
+            }
+
             // Drag and Drop
+            function dragDropSupportCheck(){
+                return ('draggable' in document.createElement('div'));
+            }
+
             function allowDrop(event){
                 event.preventDefault();
             }
@@ -78,23 +184,32 @@
                 else {
                     event.target.appendChild(element);
                 }
-                toggleTheme(element);
+                toggleThemeDD(element);
             }
         </script>
     </head>
 
     <body>
         <header>
-            <nav class="navbar fixed-top">
-                <a class="navbar-brand" href="#">WebsiteName</a>
+            <nav class="navbar bg-body-tertiary border">
+                <a class="navbar-brand" href="index.html">TotalDwarf.dev</a>
 
-                <div id="ThemeControls" class="border">
-                    <div id="BatteryHolder" class="BatteryContainer border" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <i id="Battery" class="fa fa-battery-full" draggable="true" ondragstart="drag(event)"></i>
+                <div id="ThemeControls" class="navbar-nav ms-auto">
+                    <div id="dragDropThemeControls" class="row">
+                        <div id="BatteryHolder" class="BatteryContainer col-6 border" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            <i id="Battery" class="fa fa-battery-full" draggable="true" ondragstart="drag(event)"></i>
+                        </div>
+    
+                        <div id="BatterySocket" class="BatteryContainer col-6 border" ondrop="drop(event)" ondragover="allowDrop(event)">
+                            <i id="socketicon" class="fa fa-bolt"></i>
+                        </div>
                     </div>
 
-                    <div id="BatterySocket" class="BatteryContainer border" ondrop="drop(event)" ondragover="allowDrop(event)">
-                        <i id="socketicon" class="fa fa-bolt"></i>
+                    <div id="switchThemeControls" class="row">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="themeSwitch" onchange="toggleThemeSwitch()">
+                            <label class="form-check-label" for="themeSwitch"><i id="themeIcon" class="fa fa-moon-o" style="font-size: 24px;"></i></label>
+                        </div>
                     </div>
                 </div>
 
@@ -104,24 +219,39 @@
 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Navigation</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>              
             </nav>
         </header>
         <main>
+            <div class="row">
+                <div id="BasicAbout" class="col-12 col-md-3" >
+                    <img src="Images/Man.jpeg" class="img-fluid rounded" alt="Photo of Man">
+                    <h2>Who am I?</h2>
+                    <p></p>
 
+                    <h2>Socials</h2>
+                    <p></p>
+
+                </div>
+
+                <div class="col-12 col-md-9">
+                    <h1>Welcome to TotalDwarf.dev</h1>
+                    <p>A small website written about me!</p>
+                </div>
+            </div>
         </main>
         <footer>
             <!-- place footer here -->

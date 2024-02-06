@@ -1,10 +1,19 @@
-#ThemeControls {
+.row {
     
 }
 
-.BatteryContainer {
-    float: right;
+/* Navigation */
+.navbar {
+    padding: 10px;
+}
 
+/* Theme Switcher  */
+#ThemeControls {
+    padding: 0px 10px;
+    margin-right: 20px;
+}
+
+.BatteryContainer {
     width: 100px;
     height: 32px;
 
@@ -19,4 +28,11 @@
 
 #socketicon {
     font-size: 32px;
+}
+
+/* index.html */
+
+#BasicAbout {
+    text-align: center;
+    padding: 10px;
 }
