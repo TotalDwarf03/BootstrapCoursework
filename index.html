@@ -189,6 +189,7 @@
         <header>
             <nav class="navbar bg-body-tertiary border">
                 <a class="navbar-brand" href="index.html">TotalDwarf.dev</a>
+                <!-- <span class="navbar-text">Home</span> -->
 
                 <div id="ThemeControls" class="navbar-nav ms-auto">
                     <div id="dragDropThemeControls" class="row">
@@ -221,7 +222,7 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link active" href="index.html">Home</a>
+                                <a class="nav-link active" href="index.html" aria-current="page">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="blog.html">Blog</a>
@@ -245,6 +246,21 @@
         </header>
         <main>
             <div class="container">
+                <!-- Breadcrumbs -->
+                <nav id="breadcrumb" aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
+                    <li class="breadcrumb-item">
+                        <a class="link-body-emphasis" href="index.html">
+                        <i class="bi bi-house-door-fill"></i>
+                        <span class="visually-hidden">Home</span>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        Home
+                    </li>
+                    </ol>
+                </nav>
+
                 <div class="row">
                     <!-- Use full width if small device, use 3 columns if medium device -->
                     <div id="BasicAbout" class="col-12 col-md-3">

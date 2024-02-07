@@ -230,7 +230,7 @@
                                 <a class="nav-link" href="projects.html">Projects</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="experience.html">Experience</a>
+                                <a class="nav-link active" href="experience.html" aria-current="page">Experience</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="contact.html">Contact</a>
@@ -245,7 +245,25 @@
         </header>
         <main>
             <div class="container">
-                
+                <!-- Breadcrumbs -->
+                <nav id="breadcrumb" aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
+                    <li class="breadcrumb-item">
+                        <a class="link-body-emphasis" href="index.html">
+                        <i class="bi bi-house-door-fill"></i>
+                        <span class="visually-hidden">Home</span>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a class="link-body-emphasis" href="index.html">
+                        <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        Experience
+                    </li>
+                    </ol>
+                </nav>
             </div>
         </main>
         <footer class="justify-content-between align-items-center border-top">
