@@ -20,6 +20,27 @@ footer {
     text-align: center;
 }
 
+/*
+    Media query to hide footer content on smaller screens
+    - only shows Developed by and Linkedin and Github Links for narrow screens
+    - hide footer for short screens
+*/
+@media only screen and (max-width: 576px){
+    #techStack {
+        display: none;
+    }
+
+    #developedFor {
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 600px){
+    footer {
+        display: none;
+    }
+}
+
 /* Theme Switcher  */
 #ThemeControls {
     padding: 0px 10px;
