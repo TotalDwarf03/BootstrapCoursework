@@ -39,150 +39,9 @@
         />
 
         <!-- My Scripts -->
-        <script>
-            window.onload = function(){
-                // Once windows loaded:
-
-                // Check Local Storage API Support
-                initialiseSessionStorage();
-
-                // Check Drag and Drop API Support
-                // If supported hide the switch theme controls
-                if(dragDropSupportCheck()){
-                    document.getElementById("switchThemeControls").classList.add("hidden");
-                }
-                // If not hide the drag and drop theme controls
-                else{
-                    document.getElementById("dragDropThemeControls").classList.add("hidden");
-                }
-            }
-
-            // Theme Controller
-            function toggleThemeDD(element){
-                // Get current theme
-                theme = document.documentElement.getAttribute("data-bs-theme");
-                socketicon = document.getElementById("socketicon");
-
-                if(theme == "dark"){
-                    let lightOn = new Audio("Audio/lightOn.wav");
-                    lightOn.play();
-
-                    // Change theme and apply to Session Storage if supported
-                    document.documentElement.setAttribute("data-bs-theme", "light");
-                    
-                    if(storageSupportCheck){
-                        sessionStorage.theme = "light";
-                    }
-                    
-                    socketicon.hidden = true;
-                }
-                else{
-                    let lightOff = new Audio("Audio/lightOff.wav");
-                    lightOff.play();
-
-                    // Change theme and apply to Session Storage if supported
-                    document.documentElement.setAttribute("data-bs-theme", "dark");
-                    
-                    if(storageSupportCheck){
-                        sessionStorage.theme = "dark";
-                    }
-
-                    socketicon.hidden = false;
-                }
-            }
-
-            function toggleThemeSwitch(){
-                // Get current theme
-                theme = document.documentElement.getAttribute("data-bs-theme");
-
-                if(theme == "dark"){
-                    // Change theme and apply to Session Storage if supported
-                    document.documentElement.setAttribute("data-bs-theme", "light");
-                    
-                    if(storageSupportCheck){
-                        sessionStorage.theme = "light";
-                    }
-
-                    // Change theme icon
-                    document.getElementById("themeIcon").className = "fa fa-sun-o";
-                }
-                else{
-                    // Change theme and apply to Session Storage if supported
-                    document.documentElement.setAttribute("data-bs-theme", "dark");
-                    
-                    if(storageSupportCheck){
-                        sessionStorage.theme = "dark";
-                    }
-
-                    // Change theme icon
-                    document.getElementById("themeIcon").className = "fa fa-moon-o";
-                }
-            }
-
-            // Web Storage
-            function storageSupportCheck(){
-                return typeof(Storage) !== "undefined" ? true : false;
-            }
-
-            /**
-             * Initialises Session Storage
-             * 
-             * Called once HTML header is loaded
-             */
-            function initialiseSessionStorage(){
-                if(storageSupportCheck()){
-                    if(sessionStorage.theme == "dark"){
-                        document.documentElement.setAttribute("data-bs-theme", "dark");
-                    }
-                    else if(sessionStorage.theme == "light"){
-                        document.documentElement.setAttribute("data-bs-theme", "light");
-    
-                        // Also need to manually move drag and drop
-                        battery = document.getElementById("Battery");
-                        socketicon = document.getElementById("socketicon");
-                        batterysocket = document.getElementById("BatterySocket");
-    
-                        batterysocket.appendChild(battery);
-                        socketicon.hidden = true;
-
-                        // Also check theme switch and change label icon
-                        document.getElementById("themeSwitch").checked = true;
-                        document.getElementById("themeIcon").className = "fa fa-sun-o";
-
-                    }
-                    else{
-                        // If SessionStorage.theme isn't set, initialise it as dark to match default
-                        sessionStorage.theme = "dark";
-                    }
-                }
-            }
-
-            // Drag and Drop
-            function dragDropSupportCheck(){
-                return ('draggable' in document.createElement('div'));
-            }
-
-            function allowDrop(event){
-                event.preventDefault();
-            }
-
-            function drag(event) {
-                event.dataTransfer.setData("text", event.target.id);
-            }
-
-            function drop(event){
-                event.preventDefault();
-                var data = event.dataTransfer.getData("text");
-                var element = document.getElementById(data)
-                if (event.target.id == "socketicon"){
-                    event.target.parentElement.appendChild(element);
-                }
-                else {
-                    event.target.appendChild(element);
-                }
-                toggleThemeDD(element);
-            }
-        </script>
+        <script
+            src="Scripts/script.js"
+        ></script>
     </head>
 
     <body>
@@ -190,30 +49,30 @@
             <nav class="navbar bg-body-tertiary border">
                 <a class="navbar-brand" href="index.html">TotalDwarf.dev</a>
                 <!-- <span class="navbar-text">Home</span> -->
-
+        
                 <div id="ThemeControls" class="navbar-nav ms-auto">
-                    <div id="dragDropThemeControls" class="row">
+                    <div id="dragDropThemeControls" class="row hideOnWidth">
                         <div id="BatteryHolder" class="BatteryContainer col-6 border" ondrop="drop(event)" ondragover="allowDrop(event)">
-                            <i id="Battery" class="fa fa-battery-full" draggable="true" ondragstart="drag(event)"></i>
+                            <i id="Battery" class="fa fa-battery-full icon32" draggable="true" ondragstart="drag(event)"></i>
                         </div>
-    
+        
                         <div id="BatterySocket" class="BatteryContainer col-6 border" ondrop="drop(event)" ondragover="allowDrop(event)">
-                            <i id="socketicon" class="fa fa-bolt"></i>
+                            <i id="socketicon" class="fa fa-bolt icon32"></i>
                         </div>
                     </div>
-
-                    <div id="switchThemeControls" class="row">
+        
+                    <div id="switchThemeControls" class="row showOnWidth">
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="themeSwitch" onchange="toggleThemeSwitch()">
                             <label class="form-check-label" for="themeSwitch"><i id="themeIcon" class="fa fa-moon-o" style="font-size: 24px;"></i></label>
                         </div>
                     </div>
                 </div>
-
+        
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+        
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Navigation</h5>
@@ -244,15 +103,16 @@
                 </div>              
             </nav>
         </header>
+
         <main>
             <div class="container">
                 <!-- Breadcrumbs -->
-                <nav id="breadcrumb" aria-label="breadcrumb">
+                <nav class="breadcrumbMargin" aria-label="breadcrumb">
                     <ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
                     <li class="breadcrumb-item">
                         <a class="link-body-emphasis" href="index.html">
-                        <i class="bi bi-house-door-fill"></i>
-                        <span class="visually-hidden">Home</span>
+                            <i class="fa fa-home"></i>
+                            <span class="visually-hidden">Home</span>
                         </a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
@@ -263,7 +123,7 @@
 
                 <div class="row">
                     <!-- Use full width if small device, use 3 columns if medium device -->
-                    <div id="BasicAbout" class="col-12 col-md-3">
+                    <div class="col-12 col-md-3 text-center">
                         <img src="Images/Man.jpeg" class="img-fluid rounded" alt="Photo of Man">
                         <h2>Kieran Pritchard</h2>
                         <p>A Year 2 Network 75 Computing Student with a fondness for Software Development and Data.</p>
@@ -277,11 +137,12 @@
                 </div>
             </div>
         </main>
-        <footer class="justify-content-between align-items-center border-top">
+
+        <footer class="justify-content-between align-items-center border-top hideOnHeight">
             <ul class="list-unstyled">
-                <li id="developedBy"><b>Developed by:</b> Kieran Pritchard</li>
-                <li id="techStack"><b>Tech Stack:</b> HTML5, CSS, JavaScript, Bootstrap</li>
-                <li id="developedFor"><b>Developed for:</b> Dynamic Website Development (IS2S563) Coursework 2</li>
+                <li><b>Developed by:</b> Kieran Pritchard</li>
+                <li class="hideOnWidth"><b>Tech Stack:</b> HTML5, CSS, JavaScript, Bootstrap</li>
+                <li class="hideOnWidth"><b>Developed for:</b> Dynamic Website Development (IS2S563) Coursework 2</li>
                 <li>
                     <ul class="nav justify-content-center">
                         <li class="nav-item"><a class="nav-link px-2 text-body-secondary" href="https://github.com/TotalDwarf03" target="_blank"><i class="fa fa-github" style="font-size: 20px;"></i></a></li>

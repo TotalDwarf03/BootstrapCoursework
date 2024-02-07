@@ -1,5 +1,24 @@
+/* Classes for hiding/showing content */
 .hidden {
     display: none;
+}
+
+@media only screen and (max-width: 576px){
+    .hideOnWidth {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 576px){
+    .showOnWidth {
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 650px){
+    .hideOnHeight {
+        display: none;
+    }
 }
 
 /* Navigation */
@@ -7,7 +26,7 @@
     padding: 10px;
 }
 
-#breadcrumb {
+.breadcrumbMargin {
     margin: 10px 20px;
 }
 
@@ -20,25 +39,8 @@ footer {
     text-align: center;
 }
 
-/*
-    Media query to hide footer content on smaller screens
-    - only shows Developed by and Linkedin and Github Links for narrow screens
-    - hide footer for short screens
-*/
-@media only screen and (max-width: 576px){
-    #techStack {
-        display: none;
-    }
-
-    #developedFor {
-        display: none;
-    }
-}
-
-@media only screen and (max-height: 650px){
-    footer {
-        display: none;
-    }
+.icon32 {
+    font-size: 32px;
 }
 
 /* Theme Switcher  */
@@ -54,33 +56,4 @@ footer {
     margin: 10px;
 
     text-align: center;
-}
-
-#Battery {
-    font-size: 32px;
-}
-
-#socketicon {
-    font-size: 32px;
-}
-
-/* 
-    Media Queries to show/hide theme controls based on device width
-    - If device is small, hide drag and drop but show switch
-*/
-@media only screen and (max-width: 576px) {
-    #dragDropThemeControls {
-        display: none;
-    }
-
-    #switchThemeControls {
-        display: unset;
-    }
-}
-
-/* index.html */
-
-#BasicAbout {
-    text-align: center;
-    padding: 10px;
 }
