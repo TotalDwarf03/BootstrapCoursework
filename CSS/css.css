@@ -59,14 +59,3 @@ footer {
     text-align: center;
     padding: 10px;
 }
-
-#SocialTable td i {
-    font-size: 36px;
-    text-align: center;
-}
-
-#SocialTable td p {
-    font-size: 20px;
-    text-align: left;
-    margin: auto;
-}
