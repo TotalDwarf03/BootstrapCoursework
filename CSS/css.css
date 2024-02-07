@@ -1,3 +1,7 @@
+.hidden {
+    display: none;
+}
+
 /* Navigation */
 .navbar {
     padding: 10px;
@@ -35,9 +39,34 @@ footer {
     font-size: 32px;
 }
 
+/* 
+    Media Queries to show/hide theme controls based on device width
+    - If device is small, hide drag and drop but show switch
+*/
+@media only screen and (max-width: 576px) {
+    #dragDropThemeControls {
+        display: none;
+    }
+
+    #switchThemeControls {
+        display: unset;
+    }
+}
+
 /* index.html */
 
 #BasicAbout {
     text-align: center;
     padding: 10px;
+}
+
+#SocialTable td i {
+    font-size: 36px;
+    text-align: center;
+}
+
+#SocialTable td p {
+    font-size: 20px;
+    text-align: left;
+    margin: auto;
 }
