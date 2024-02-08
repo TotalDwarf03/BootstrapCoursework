@@ -21,21 +21,22 @@
     }
 }
 
+/* Page Divider */
+.divider {
+    margin: 10px auto;
+}
+
 /* Navigation */
 .navbar {
     padding: 10px;
 }
 
 .breadcrumbMargin {
-    margin: 10px 20px;
+    margin: 10px 0px;
 }
 
 /* Footer */
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-
     text-align: center;
 }
 
@@ -55,5 +56,27 @@ footer {
 
     margin: 10px;
 
+    text-align: center;
+}
+
+/* Title Video */
+.titleVideo {
+    position: relative;
+}
+
+.titleVideo video {
+    position: relative;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+
+    padding-top: 10%;
     text-align: center;
 }
