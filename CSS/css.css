@@ -21,9 +21,27 @@
     }
 }
 
+/* Padding */
+.rmpad {
+    padding: 0px;
+}
+
+.pad10 {
+    padding: 10px;
+}
+
+.pad20 {
+    padding: 20px;
+}
+
 /* Page Divider */
 .divider {
     margin: 10px auto;
+}
+
+/* Bootstrap Row Tweaks */
+.row {
+    margin: 10px 0px;
 }
 
 /* Navigation */

@@ -45,7 +45,6 @@
         <header>
             <nav class="navbar bg-body-tertiary border">
                 <a class="navbar-brand" href="index.html">TotalDwarf.dev</a>
-                <!-- <span class="navbar-text">Home</span> -->
         
                 <div id="ThemeControls" class="navbar-nav ms-auto">
                     <div id="dragDropThemeControls" class="row hideOnWidth">
@@ -104,7 +103,7 @@
         <main>
             <div class="container">
                 <!-- Breadcrumbs -->
-                <nav class="breadcrumbMargin" aria-label="breadcrumb">
+                <nav class="breadcrumbMargin shadow" aria-label="breadcrumb">
                     <ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
                     <li class="breadcrumb-item">
                         <a class="link-body-emphasis" href="index.html">
@@ -127,26 +126,98 @@
                             </video>
     
                             <div class="overlay">
-                                <h1 class="bg-body bg-opacity-75">
+                                <h1 class="bg-body bg-opacity-75 shadow">
                                     <i>Welcome to</i>
                                     <br>
                                     <b>TotalDwarf.dev</b>
                                 </h1>
-                                <p class="bg-body bg-opacity-75">A responsive web portfolio about Kieran Pritchard</p>
+                                <p class="bg-body bg-opacity-75 shadow">A responsive web portfolio about Kieran Pritchard</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <hr class="divider">
-
                 <div class="row">
-                    <div class="col-5 col-md-4">
-                        <img src="Images/Man.jpeg" alt="Man" class="img-fluid rounded">
+                    <div class="col-12 col-md-8">
+                        <h2 class="text-center">Get Started with These:</h2>
+
+                        <div id="pagesCarousel" class="carousel carousel-fade" data-bs-ride="carousel">
+                            <!-- Indicators -->
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#pagesCarousel" data-bs-slide-to="0" class="active"></button>
+                                <button type="button" data-bs-target="#pagesCarousel" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#pagesCarousel" data-bs-slide-to="2"></button>
+                            </div>
+    
+                            <!-- Slide Content -->
+                            <div class="carousel-inner">
+                                <!-- Projects -->
+                                <div class="carousel-item active">
+                                    <img src="Images/Projects.png" alt="Projects Image" class="d-block w-100">
+                                    <div class="carousel-caption">
+                                        <a href="projects.html">
+                                            <button type="button" class="rounded">View</button>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Experience -->
+                                <div class="carousel-item">
+                                    <img src="Images/Experience.png" alt="Experience Image" class="d-block w-100">
+                                    <div class="carousel-caption">
+                                        <a href="experience.html">
+                                            <button type="button" class="rounded">View</button>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Blog -->
+                                <div class="carousel-item">
+                                    <img src="Images/Blog.png" alt="Blog Image" class="d-block w-100">
+                                    <div class="carousel-caption">
+                                        <a href="blog.html">
+                                            <button type="button" class="rounded">View</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Control Buttons -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#pagesCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#pagesCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="col-7 col-md-8">
+                    <div class="col-md-4 hideOnWidth border rounded bg-body-tertiary text-center">
+                        <img src="Images/Man.jpeg" alt="A Photo of Kieran Pritchard" class="img-fluid w-100 rounded pad10">
+                        <h2>Hi, I'm Kieran!</h2>
+                        <p>A Year 2 Network 75 Computing Student.</p>
 
+                        <div class="pad10">
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#aboutInfo" aria-expanded="false" aria-controls="aboutInfo">
+                                About
+                            </button>
+                            <div id="aboutInfo" class="collapse">
+                                <div class="card card-body text-center">
+                                    <p>Head to my about page to find out more about me!</p>
+                                    <a class="btn btn-primary" href="about.html" role="button">Find Out More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="jumbotron jumbotrol-fluid bg-body-secondary rounded pad10 text-center">
+                            <h1 class="display-4">Want to Find Out More?</h1>
+                            <p class="lead">Feel free to head to my contact page and get in touch.</p>
+                            <hr class="my-4">
+                            <p>You can also check my Linkedin or Github for more information.</p>
+                            <a class="btn btn-primary btn-lg" href="contact.html" role="button">Contact</a>
+                        </div>
                     </div>
                 </div>
             </div>
