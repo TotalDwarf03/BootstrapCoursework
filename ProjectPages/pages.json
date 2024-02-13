@@ -17,10 +17,68 @@
             "desc": "A basic game where the player has to navigate through a minefield to their home.",
             "techstack": [
                 "C#",
-                ".NET 5.0",
                 "Winforms"
             ],
             "pageurl": "Minefield.html",
+            "featured": true
+        },
+        {
+            "name": "Bootstrap Website Portfolio",
+            "imgpath": "Images/BootstrapWebsite.png",
+            "desc": "A response HTML5 website based on Bootstrap .",
+            "techstack": [
+                "HTML5",
+                "CSS",
+                "JavaScript",
+                "Bootstrap 5"
+            ],
+            "pageurl": "BootstrapWebsite.html",
+            "featured": true
+        },
+        {
+            "name": "CarCo PHP Website",
+            "imgpath": "Images/CarCoWebsite.png",
+            "desc": "A PHP Web App to control a Database and Users.",
+            "techstack": [
+                "PHP",
+                "MySQL"
+            ],
+            "pageurl": "CarCoWebsite.html",
+            "featured": true
+        },
+        {
+            "name": "PBL Database Frontend",
+            "imgpath": "Images/PBLFrontend.png",
+            "desc": "A C# Winforms database frontend.",
+            "techstack": [
+                "C#",
+                "Winforms",
+                "SQLite"
+            ],
+            "pageurl": "PBLFrontend.html",
+            "featured": false
+        },
+        {
+            "name": "The City Farm Website",
+            "imgpath": "Images/CityFarmWebsite.png",
+            "desc": "A HTML and CSS Website focusing on proper semantic markup practice.",
+            "techstack": [
+                "HTML5",
+                "CSS"
+            ],
+            "pageurl": "CityFarmWebsite.html",
+            "featured": false
+        },
+        {
+            "name": "Sense Hat Arrow Game",
+            "imgpath": "Images/SenseHatArrowGame.png",
+            "desc": "A game built in Python for the Raspberry Pi Sense Hat.",
+            "techstack": [
+                "Python",
+                "Raspberry Pi",
+                "GPIO"
+            ],
+            "pageurl": "SenseHatArrowGame",
             "featured": false
         }
     ]
