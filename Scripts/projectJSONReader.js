@@ -28,13 +28,15 @@ function updateDOM(json){
             <div class="col mb-4">
                 <div class="card h-100 text-center">
                     <img src="${project.imgpath}" class="card-img-top" alt="${project.name} Image">
-                    <div class="card-body">
+                    <div class="card-body card-body-scroll">
                         <h5 class="card-title">${project.name}</h5>
                         <p class="card-text">${project.desc}</p>
                         <h6>Tech Stack:</h6>
                         <ul class="list-inline list-inline-separator">
                             ${printTechStack(project.techstack)}
                         </ul>
+                    </div>
+                    <div class="card-footer">
                         <a class="btn btn-primary" href="${project.pageurl}" role="button">Read More</a>
                     </div>
                 </div>
@@ -42,7 +44,8 @@ function updateDOM(json){
         `;
         
         // Add to allProjects
-        allProjects.innerHTML += html;
+        // .replace to remove a class only for featured projects
+        allProjects.innerHTML += html.replace("card-body-scroll", "");
 
         // Add to featuredProjects if featured == true
         if(project.featured == true){

@@ -9,6 +9,12 @@
     }
 }
 
+@media only screen and (max-width: 992px){
+    .hideOnlgWidth {
+        display: none;
+    }
+}
+
 @media only screen and (min-width: 576px){
     .showOnWidth {
         display: none;
@@ -100,7 +106,7 @@ footer {
 }
 
 /* Cards */
-.card-body {
+.card-body-scroll {
     min-height: 300px;
     min-width: 300px;
     margin-right: 5px;
