@@ -98,3 +98,22 @@ footer {
     padding-top: 10%;
     text-align: center;
 }
+
+/* Cards */
+.card-body {
+    min-height: 300px;
+    min-width: 300px;
+    margin-right: 5px;
+}
+
+.xscroll {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    max-height: 400px;
+}
+
+
+.list-inline-separator li:after {
+    content:'|';
+    margin:0 5px
+  }

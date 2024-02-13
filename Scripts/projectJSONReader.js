@@ -5,6 +5,16 @@ fetch("../ProjectPages/pages.json")
     .then(response => response.json())
     .then(json => updateDOM(json));
 
+function printTechStack(techstack){
+    techstackHTML = ""
+
+    for(let i = 0; i < techstack.length; i++){
+        techstackHTML += `<li class="list-inline-item ">${techstack[i]}</li>`;
+    }
+
+    return techstackHTML;
+}
+
 function updateDOM(json){
     var allProjects = document.getElementById("allProjects");
     var featuredProjects = document.getElementById("featuredProjects");
@@ -14,7 +24,22 @@ function updateDOM(json){
     
     for(let i = 0; i < json.Projects.length; i++){
         project = json.Projects[i];
-        html = `<p>${project.name}, ${project.imgpath}, ${project.desc}, ${project.techstack}, ${project.pageurl}, ${project.featured}</p>`;
+        html = `
+            <div class="col mb-4">
+                <div class="card h-100 text-center">
+                    <img src="${project.imgpath}" class="card-img-top" alt="${project.name} Image">
+                    <div class="card-body">
+                        <h5 class="card-title">${project.name}</h5>
+                        <p class="card-text">${project.desc}</p>
+                        <h6>Tech Stack:</h6>
+                        <ul class="list-inline list-inline-separator">
+                            ${printTechStack(project.techstack)}
+                        </ul>
+                        <a class="btn btn-primary" href="${project.pageurl}" role="button">Read More</a>
+                    </div>
+                </div>
+            </div>    
+        `;
         
         // Add to allProjects
         allProjects.innerHTML += html;
@@ -23,5 +48,5 @@ function updateDOM(json){
         if(project.featured == true){
             featuredProjects.innerHTML += html;
         }
-}
+    }
 }
