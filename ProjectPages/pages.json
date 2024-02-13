@@ -1,0 +1,27 @@
+{
+    "Projects": [
+        {
+            "name": "Flashcard Revision Software",
+            "imgpath": "Images/FlashcardRevisionSoftware.png",
+            "desc": "A GUI application allowing users to create, use and manage revision flashcard sets.",
+            "techstack": [
+                "Python",
+                "Tkinter"
+            ],
+            "pageurl": "FlashcardRevisionSoftware.html",
+            "featured": true
+        },
+        {
+            "name": "Minefield Game",
+            "imgpath": "Images/Minefield.png",
+            "desc": "A basic game where the player has to navigate through a minefield to their home.",
+            "techstack": [
+                "C#",
+                ".NET 5.0",
+                "Winforms"
+            ],
+            "pageurl": "Minefield.html",
+            "featured": false
+        }
+    ]
+}
