@@ -49,7 +49,9 @@ function updateDOM(json){
 
         // Add to featuredProjects if featured == true
         if(project.featured == true){
-            featuredProjects.innerHTML += html;
+
+            // .replace to remove a class only for allProjects grid (removes bottom margin)
+            featuredProjects.innerHTML += html.replace("mb-4");
         }
     }
 }
