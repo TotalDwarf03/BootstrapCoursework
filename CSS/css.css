@@ -84,7 +84,7 @@ footer {
 }
 
 /* Title Video */
-.titleVideo {
+/* .titleVideo {
     position: relative;
 }
 
@@ -103,7 +103,7 @@ footer {
 
     padding-top: 10%;
     text-align: center;
-}
+} */
 
 /* Cards */
 .card-body-scroll {
@@ -115,7 +115,6 @@ footer {
 .xscroll {
     overflow-x: scroll;
     overflow-y: hidden;
-    max-height: 400px;
 }
 
 
