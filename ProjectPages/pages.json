@@ -78,8 +78,20 @@
                 "Raspberry Pi",
                 "GPIO"
             ],
-            "pageurl": "SenseHatArrowGame",
+            "pageurl": "SenseHatArrowGame.html",
             "featured": false
+        },
+        {
+            "name": "Github API CLI",
+            "imgpath": "Images/GhApiCli.png",
+            "desc": "A CLI program which interacts with the Github API.",
+            "techstack": [
+                "Python",
+                "Poetry",
+                "Requests"
+            ],
+            "pageurl": "GithubApiCli.html",
+            "featured": true
         }
     ]
 }
