@@ -27,7 +27,7 @@ function updateDOM(json){
         html = `
             <div class="col mb-4">
                 <div class="card h-100 text-center">
-                    <img src="${project.imgpath}" class="card-img-top" alt="${project.name} Image">
+                    <img src="../ProjectPages/${project.imgpath}" class="card-img-top " alt="${project.name} Image">
                     <div class="card-body card-body-scroll">
                         <h5 class="card-title">${project.name}</h5>
                         <p class="card-text">${project.desc}</p>
