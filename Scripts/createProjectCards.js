@@ -24,6 +24,9 @@ function updateDOM(json){
     
     for(let i = 0; i < json.Projects.length; i++){
         project = json.Projects[i];
+
+        // For now, using a project example page
+        // If deployed, swap link to use project.pageurl
         html = `
             <div class="col mb-4">
                 <div class="card h-100 text-center">
@@ -37,7 +40,7 @@ function updateDOM(json){
                         </ul>
                     </div>
                     <div class="card-footer">
-                        <a class="btn btn-primary" href="${project.pageurl}" role="button">Read More</a>
+                        <a class="btn btn-primary" href="ProjectPages/exampleProject.html" role="button">Read More</a>
                     </div>
                 </div>
             </div>    

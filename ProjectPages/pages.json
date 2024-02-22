@@ -1,6 +1,19 @@
 {
     "Projects": [
         {
+            "name": "Example Project",
+            "imgpath": "Images/ExampleProject.png",
+            "desc": "Example Project Description.",
+            "techstack": [
+                "HTML5",
+                "CSS",
+                "JavaScript",
+                "Bootstrap 5"
+            ],
+            "pageurl": "ExampleProject.html",
+            "featured": true
+        },
+        {
             "name": "Flashcard Revision Software",
             "imgpath": "Images/FlashcardRevisionSoftware.png",
             "desc": "A GUI application allowing users to create, use and manage revision flashcard sets.",
@@ -9,7 +22,7 @@
                 "Tkinter"
             ],
             "pageurl": "FlashcardRevisionSoftware.html",
-            "featured": true
+            "featured": false
         },
         {
             "name": "Minefield Game",
