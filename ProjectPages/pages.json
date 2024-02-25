@@ -3,7 +3,7 @@
         {
             "name": "Example Project",
             "imgpath": "Images/ExampleProject.png",
-            "desc": "Example Project Description.",
+            "desc": "Example Project. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             "techstack": [
                 "HTML5",
                 "CSS",
@@ -11,7 +11,8 @@
                 "Bootstrap 5"
             ],
             "pageurl": "ExampleProject.html",
-            "featured": true
+            "featured": true,
+            "GithubName": "ExampleProject"
         },
         {
             "name": "Flashcard Revision Software",
@@ -22,7 +23,8 @@
                 "Tkinter"
             ],
             "pageurl": "FlashcardRevisionSoftware.html",
-            "featured": false
+            "featured": false,
+            "GithubName": "FlashcardRevisionSoftwareCollection"
         },
         {
             "name": "Minefield Game",
@@ -33,7 +35,8 @@
                 "Winforms"
             ],
             "pageurl": "Minefield.html",
-            "featured": true
+            "featured": true,
+            "GithubName": "MinefieldGame"
         },
         {
             "name": "Bootstrap Website Portfolio",
@@ -46,7 +49,8 @@
                 "Bootstrap 5"
             ],
             "pageurl": "BootstrapWebsite.html",
-            "featured": true
+            "featured": true,
+            "GithubName": "BootstrapCoursework"
         },
         {
             "name": "CarCo PHP Website",
@@ -57,7 +61,8 @@
                 "MySQL"
             ],
             "pageurl": "CarCoWebsite.html",
-            "featured": true
+            "featured": true,
+            "GithubName": "CarCo"
         },
         {
             "name": "PBL Database Frontend",
@@ -69,7 +74,8 @@
                 "SQLite"
             ],
             "pageurl": "PBLFrontend.html",
-            "featured": false
+            "featured": false,
+            "GithubName": "PBLDatabaseFrontend"
         },
         {
             "name": "The City Farm Website",
@@ -80,7 +86,8 @@
                 "CSS"
             ],
             "pageurl": "CityFarmWebsite.html",
-            "featured": false
+            "featured": false,
+            "GithubName": "TheCityFarmWebsite"
         },
         {
             "name": "Sense Hat Arrow Game",
@@ -92,7 +99,8 @@
                 "GPIO"
             ],
             "pageurl": "SenseHatArrowGame.html",
-            "featured": false
+            "featured": false,
+            "GithubName": "SenseHatArrowGame"
         },
         {
             "name": "Github API CLI",
@@ -104,7 +112,8 @@
                 "Requests"
             ],
             "pageurl": "GithubApiCli.html",
-            "featured": true
+            "featured": true,
+            "GithubName": "GithubAPIApp"
         }
     ]
 }

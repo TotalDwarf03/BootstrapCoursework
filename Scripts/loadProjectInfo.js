@@ -9,7 +9,16 @@ function updateDOM(json){
         project = json.Projects[i];
 
         if (project.pageurl.toLowerCase() == projectFileName){
-            
+            // Get all UI Elements
+            heading = document.getElementById("PageHeading");
+            image = document.getElementById("ProjectImage");
+            description = document.getElementById("ProjectDescription");
+            techStack = document.getElementById("ProjectTechStack");
+
+            heading.innerHTML = project.name;
+            image.src = project.imgpath;
+            description.innerHTML = project.desc;
+            techStack.innerHTML = printTechStack(project.techstack);
         }
         else {
             

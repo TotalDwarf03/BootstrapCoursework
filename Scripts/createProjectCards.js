@@ -5,16 +5,6 @@ fetch("../ProjectPages/pages.json")
     .then(response => response.json())
     .then(json => updateDOM(json));
 
-function printTechStack(techstack){
-    techstackHTML = ""
-
-    for(let i = 0; i < techstack.length; i++){
-        techstackHTML += `<li class="list-inline-item ">${techstack[i]}</li>`;
-    }
-
-    return techstackHTML;
-}
-
 function updateDOM(json){
     var allProjects = document.getElementById("allProjects");
     var featuredProjects = document.getElementById("featuredProjects");
@@ -25,8 +15,6 @@ function updateDOM(json){
     for(let i = 0; i < json.Projects.length; i++){
         project = json.Projects[i];
 
-        // For now, using a project example page
-        // If deployed, swap link to use project.pageurl
         html = `
             <div class="col mb-4">
                 <div class="card h-100 text-center">
@@ -40,7 +28,7 @@ function updateDOM(json){
                         </ul>
                     </div>
                     <div class="card-footer">
-                        <a class="btn btn-primary" href="ProjectPages/exampleProject.html" role="button">Read More</a>
+                        <a class="btn btn-primary" href="ProjectPages/${project.pageurl}" role="button">Read More</a>
                     </div>
                 </div>
             </div>    
