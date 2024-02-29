@@ -12,7 +12,7 @@
             ],
             "pageurl": "ExampleProject.html",
             "featured": true,
-            "GithubName": "ExampleProject"
+            "githubname": "ExampleProject"
         },
         {
             "name": "Flashcard Revision Software",
@@ -24,7 +24,7 @@
             ],
             "pageurl": "FlashcardRevisionSoftware.html",
             "featured": false,
-            "GithubName": "FlashcardRevisionSoftwareCollection"
+            "githubname": "FlashcardRevisionSoftwareCollection"
         },
         {
             "name": "Minefield Game",
@@ -36,7 +36,7 @@
             ],
             "pageurl": "Minefield.html",
             "featured": true,
-            "GithubName": "MinefieldGame"
+            "githubname": "MinefieldGame"
         },
         {
             "name": "Bootstrap Website Portfolio",
@@ -50,7 +50,7 @@
             ],
             "pageurl": "BootstrapWebsite.html",
             "featured": true,
-            "GithubName": "BootstrapCoursework"
+            "githubname": "BootstrapCoursework"
         },
         {
             "name": "CarCo PHP Website",
@@ -62,7 +62,7 @@
             ],
             "pageurl": "CarCoWebsite.html",
             "featured": true,
-            "GithubName": "CarCo"
+            "githubname": "CarCo"
         },
         {
             "name": "PBL Database Frontend",
@@ -75,7 +75,7 @@
             ],
             "pageurl": "PBLFrontend.html",
             "featured": false,
-            "GithubName": "PBLDatabaseFrontend"
+            "githubname": "PBLDatabaseFrontend"
         },
         {
             "name": "The City Farm Website",
@@ -87,7 +87,7 @@
             ],
             "pageurl": "CityFarmWebsite.html",
             "featured": false,
-            "GithubName": "TheCityFarmWebsite"
+            "githubname": "TheCityFarmWebsite"
         },
         {
             "name": "Sense Hat Arrow Game",
@@ -100,7 +100,7 @@
             ],
             "pageurl": "SenseHatArrowGame.html",
             "featured": false,
-            "GithubName": "SenseHatArrowGame"
+            "githubname": "SenseHatArrowGame"
         },
         {
             "name": "Github API CLI",
@@ -113,7 +113,7 @@
             ],
             "pageurl": "GithubApiCli.html",
             "featured": true,
-            "GithubName": "GithubAPIApp"
+            "githubname": "GithubAPIApp"
         }
     ]
 }

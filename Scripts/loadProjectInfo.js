@@ -19,9 +19,39 @@ function updateDOM(json){
             image.src = project.imgpath;
             description.innerHTML = project.desc;
             techStack.innerHTML = printTechStack(project.techstack);
-        }
-        else {
-            
+
+            // Change Page Title
+            document.title = `TotalDwarf.dev - ${project.name}`;
+
+            // Github Section
+            githubBtn = document.getElementById("githubBtn");
+            githubStatus = document.getElementById("githubStatus");
+
+            apiUrl = `https://api.github.com/repos/TotalDwarf03/${project.githubname}`;
+            // apiUrl = `https://api.github.com/repos/TotalDwarf03/MinefieldGame`;
+
+
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        if(response.status == 404){
+                            throw new Error("Github Repository is Private. Access Unavailable.");
+                        }
+                        else{
+                            throw new Error(`An unexpected error has occured with the Github API. Error ${response.status}: ${response.json().message}`);
+                            
+                        }
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    githubBtn.href = data.html_url;
+                })
+                .catch(error => {
+                    githubStatus.innerHTML = error;
+                    githubStatus.classList.add("alert-danger");
+                    githubBtn.classList.add("disabled");
+                })
         }
     }
 }
