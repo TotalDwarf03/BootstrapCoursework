@@ -14,7 +14,9 @@ function updateDOM(json){
             image = document.getElementById("ProjectImage");
             description = document.getElementById("ProjectDescription");
             techStack = document.getElementById("ProjectTechStack");
+            pageBreadcrumb = document.getElementById("pageBreadcrumb");
 
+            pageBreadcrumb.innerHTML = project.name;
             heading.innerHTML = project.name;
             image.src = project.imgpath;
             description.innerHTML = project.desc;
@@ -38,8 +40,7 @@ function updateDOM(json){
                             throw new Error("Github Repository is Private. Access Unavailable.");
                         }
                         else{
-                            throw new Error(`An unexpected error has occured with the Github API. Error ${response.status}: ${response.json().message}`);
-                            
+                            throw new Error(`An unexpected error has occured with the Github API. Error ${response.status}: ${response.statusText}`);
                         }
                     }
                     return response.json();
