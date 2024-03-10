@@ -1,5 +1,37 @@
 /* Sourced from: https://www.bootdey.com/snippets/view/bs4-Horizontal-timeline#preview */
 
+/* 
+	Load Experience from json before script is run 
+*/
+
+// fetch("../experience.json")
+//     .then(response => response.json())
+//     .then(json => updateDOM(json));
+
+// function updateDOM(json){
+//     timelineList = document.getElementById("timelineList");
+//     timelineContentList = document.getElementById("timelineContentList");
+
+//     selectedFound = false;
+    
+//     for(let i=0; i < json.Experience.length; i++){
+//         experience = json.Experience[i];
+
+//         classlist = "";
+
+//         if(!selectedFound){
+//             if(experience.selected) {
+//                 classlist = "selected";
+//             }
+//             else {
+//                 classlist = "older-event";
+//             }
+//         }
+
+//         timelineList.innerHTML += `<li><a href="#0" data-date="${experience.start}" class="${classlist}">${experience.displayDate}</a></li>`;
+//     }
+// }
+
 jQuery(document).ready(function($){
     var timelines = $('.cd-horizontal-timeline'),
 		eventsMinDistance = 60;

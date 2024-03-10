@@ -40,6 +40,11 @@
     padding: 20px;
 }
 
+/* Margin */
+.marb20 {
+    margin-bottom: 20px;
+}
+
 /* Page Divider */
 .divider {
     margin: 10px auto;
