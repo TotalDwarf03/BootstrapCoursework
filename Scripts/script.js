@@ -10,6 +10,15 @@ window.onload = function(){
         document.getElementById("dragDropThemeControls").classList.add("hidden");
         document.getElementById("switchThemeControls").classList.remove("hideOnWidth")
     }
+
+    // Create Maps
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(initMaps, initMaps);
+    } 
+    else {
+        console.log("Browser Does not Support Geolocation")
+        initMaps();
+    }
 }
 
 // Theme Controller
@@ -136,4 +145,94 @@ function drop(event){
         event.target.appendChild(element);
     }
     toggleThemeDD(element);
+}
+
+// Google Maps API
+async function initMaps(position) {
+    const ukwdg = { lat: 51.5459, lng: -3.2671 };
+    const ons = { lat: 51.5667, lng: -3.0273 }
+
+    // Request needed libraries.
+    //@ts-ignore
+    const { Map } = await google.maps.importLibrary("maps");
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+    let maps = [];
+    let markers = [];
+
+    // UKWDG Map
+    map = new Map(document.getElementById("map1"), {
+        zoom: 10,
+        center: ukwdg,
+        mapId: "UKWDG",
+    });
+
+    // The marker, positioned at Uluru
+    marker = new AdvancedMarkerElement({
+        map: map,
+        position: ukwdg,
+        title: "UKWDG",
+    });
+
+    maps.push(map);
+    markers.push(marker);
+
+    // ONS Maps
+    map = new Map(document.getElementById("map2"), {
+        zoom: 10,
+        center: ons,
+        mapId: "ONS",
+    });
+
+    marker = new AdvancedMarkerElement({
+        map: map,
+        position: ons,
+        title: "ONS",
+    });
+    
+    maps.push(map);
+    markers.push(marker);
+
+    map = new Map(document.getElementById("map3"), {
+        zoom: 10,
+        center: ons,
+        mapId: "ONS",
+    });
+
+    marker = new AdvancedMarkerElement({
+        map: map,
+        position: ons,
+        title: "ONS",
+    });
+    
+    maps.push(map);
+    markers.push(marker);
+
+    // Get current location using Geolocation API
+    if(position.coords !== undefined){
+        deviceMarkerImg = document.createElement("img");
+        deviceMarkerImg.src = "../Images/mapsDevice.png";
+        deviceMarkerImg.style.width = "40px"
+
+        for(let i = 0; i < maps.length; i++){
+            const devicePosition = { lat: position.coords.latitude, lng: position.coords.longitude }
+
+            marker = new AdvancedMarkerElement({
+                map: maps[i],
+                position: { lat: devicePosition.lat, lng: devicePosition.lng },
+                content: deviceMarkerImg,
+                title: 'You!'
+            })
+
+            // Find Map midpoint between both markers and adjust map centre to it
+            centrePoint = {
+                lat: (devicePosition.lat + markers[i].position.lat) / 2,
+                lng: (devicePosition.lng + markers[i].position.lng) / 2
+            }
+
+            console.log(centrePoint)
+
+            maps[i].setCenter(centrePoint);
+        }
+    }
 }
