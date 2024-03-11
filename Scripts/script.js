@@ -210,12 +210,12 @@ async function initMaps(position) {
 
     // Get current location using Geolocation API
     if(position.coords !== undefined){
-        deviceMarkerImg = document.createElement("img");
-        deviceMarkerImg.src = "../Images/mapsDevice.png";
-        deviceMarkerImg.style.width = "40px"
-
         for(let i = 0; i < maps.length; i++){
             const devicePosition = { lat: position.coords.latitude, lng: position.coords.longitude }
+            
+            deviceMarkerImg = document.createElement("img");
+            deviceMarkerImg.src = "../Images/mapsDevice.png";
+            deviceMarkerImg.style.width = "40px"
 
             marker = new AdvancedMarkerElement({
                 map: maps[i],
