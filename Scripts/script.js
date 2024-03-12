@@ -11,13 +11,23 @@ window.onload = function(){
         document.getElementById("switchThemeControls").classList.remove("hideOnWidth")
     }
 
-    // Create Maps
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(initMaps, initMaps);
-    } 
-    else {
-        console.log("Browser Does not Support Geolocation")
-        initMaps();
+    // Create Maps if on experience.html
+    if (window.location.pathname.split("/").slice(-1) == "experience.html"){
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(initMaps, initMaps);
+        } 
+        else {
+            console.log("Browser Does not Support Geolocation")
+            initMaps();
+        }
+    }
+
+    // Start Animation if on about.html
+    if (window.location.pathname.split("/").slice(-1) == "about.html"){
+
+        // This code comes from another script embedded in html.
+        // Had to put this here as it was running before this script could setup the theme
+        init();
     }
 }
 

@@ -1,153 +1,224 @@
-<!doctype html>
-<html lang="en" data-bs-theme="dark">
-    <head>
-        <title>TotalDwarf.dev - About</title>
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
+<!DOCTYPE html>
+<!--
+	NOTES:
+	1. All tokens are represented by '$' sign in the template.
+	2. You can write your code only wherever mentioned.
+	3. All occurrences of existing tokens will be replaced by their appropriate values.
+	4. Blank lines will be removed automatically.
+	5. Remove unnecessary comments before creating your template.
+-->
+<html>
+<head>
+	
+	<title>TotalDwarf.dev - About</title>
+	<meta charset="utf-8" />
+	<meta name="authoring-tool" content="Adobe_Animate_CC">
+<meta
+	name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/>
 
-        <!-- FavIcons -->
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#ffffff">
+<!-- FavIcons -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 
-        <!-- Bootstrap 5 CSS -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
+<!-- Bootstrap 5 CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+	crossorigin="anonymous"
+/>
 
-        <!-- Bootstrap JavaScript Library -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-            crossorigin="anonymous"
-        ></script>
+<!-- Bootstrap JavaScript Library -->
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+	integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+	crossorigin="anonymous"
+></script>
 
-        <!-- Font Awesome 4 Library -->
-        <link 
-            rel="stylesheet" 
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
+<!-- Font Awesome 4 Library -->
+<link 
+	rel="stylesheet" 
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
 
-        <!-- My CSS -->
-        <link
-            href="CSS/css.css"
-            rel="stylesheet"
-        />
+<!-- My CSS -->
+<link
+	href="CSS/css.css"
+	rel="stylesheet"
+/>
 
-        <!-- My Scripts -->
-        <script
-            src="Scripts/script.js"
-        ></script>
-    </head>
+<!-- My Scripts -->
+<script async
+	src="Scripts/script.js"
+></script>
 
-    <body>
-        <header>
-            <nav class="navbar bg-body-tertiary border">
-                <a class="navbar-brand" href="index.html">
-                    <img class="rounded-circle" src="Images/siteLogo.png" width="50" height="50" alt="">
-                    TotalDwarf.dev
-                </a>
-        
-                <div id="ThemeControls" class="navbar-nav ms-auto">
-                    <div id="dragDropThemeControls" class="row hideOnWidth">
-                        <div id="BatteryHolder" class="BatteryContainer col-6 border" ondrop="drop(event)" ondragover="allowDrop(event)">
-                            <i id="Battery" class="fa fa-battery-full icon32" draggable="true" ondragstart="drag(event)"></i>
-                        </div>
-        
-                        <div id="BatterySocket" class="BatteryContainer col-6 border" ondrop="drop(event)" ondragover="allowDrop(event)">
-                            <i id="socketicon" class="fa fa-bolt icon32"></i>
-                        </div>
-                    </div>
-        
-                    <div id="switchThemeControls" class="row showOnWidth">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="themeSwitch" onchange="toggleThemeSwitch()">
-                            <label class="form-check-label" for="themeSwitch"><i id="themeIcon" class="fa fa-moon-o" style="font-size: 24px;"></i></label>
-                        </div>
-                    </div>
-                </div>
-        
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-        
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Navigation</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="blog.html">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="projects.html">Projects</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="experience.html">Experience</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="about.html" aria-current="page">About</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>              
-            </nav>
-        </header>
+<!-- write your code here -->
+<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+<script src="Scripts/canvas.js"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("0EE773C515C7CC4D8C6BF1AE1DD3BC66");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.canvas();
+	stage = new lib.Stage(canvas);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+</head>
+<body style="margin:0px;">
+	<header>
+		<nav class="navbar bg-body-tertiary border">
+			<a class="navbar-brand" href="index.html">
+				<img class="rounded-circle" src="Images/siteLogo.png" width="50" height="50" alt="">
+				TotalDwarf.dev
+			</a>
+	
+			<div id="ThemeControls" class="navbar-nav ms-auto">
+				<div id="dragDropThemeControls" class="row hideOnWidth">
+					<div id="BatteryHolder" class="BatteryContainer col-6 border" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<i id="Battery" class="fa fa-battery-full icon32" draggable="true" ondragstart="drag(event)"></i>
+					</div>
+	
+					<div id="BatterySocket" class="BatteryContainer col-6 border" ondrop="drop(event)" ondragover="allowDrop(event)">
+						<i id="socketicon" class="fa fa-bolt icon32"></i>
+					</div>
+				</div>
+	
+				<div id="switchThemeControls" class="row showOnWidth">
+					<div class="form-check form-switch">
+						<input class="form-check-input" type="checkbox" role="switch" id="themeSwitch" onchange="toggleThemeSwitch()">
+						<label class="form-check-label" for="themeSwitch"><i id="themeIcon" class="fa fa-moon-o" style="font-size: 24px;"></i></label>
+					</div>
+				</div>
+			</div>
+	
+			<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+	
+			<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+				<div class="offcanvas-header">
+					<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Navigation</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="blog.html">Blog</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="projects.html">Projects</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="experience.html">Experience</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="contact.html">Contact</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" href="about.html" aria-current="page">About</a>
+						</li>
+					</ul>
+				</div>
+			</div>              
+		</nav>
+	</header>
 
-        <main>
-            <div class="container">
-                <!-- Breadcrumbs -->
-                <nav class="breadcrumbMargin" aria-label="breadcrumb">
-                    <ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
-                    <li class="breadcrumb-item">
-                        <a class="link-body-emphasis" href="index.html">
-                            <i class="fa fa-home"></i>
-                            <span class="visually-hidden">Home</span>
-                        </a>
-                    </li>
-                    <li class="breadcrumb-item">
-                        <a class="link-body-emphasis" href="index.html">
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                        About
-                    </li>
-                    </ol>
-                </nav>
-            </div>
-        </main>
-        
-        <footer class="justify-content-between align-items-center border-top">
-            <ul class="list-unstyled">
-                <li><b>Developed by:</b> Kieran Pritchard</li>
-                <li><b>Tech Stack:</b> HTML5, CSS, JavaScript, Bootstrap</li>
-                <li><b>Developed for:</b> Dynamic Website Development (IS2S563) Coursework 2</li>
-                <li>
-                    <ul class="nav justify-content-center">
-                        <li class="nav-item"><a class="nav-link px-2 text-body-secondary" href="https://github.com/TotalDwarf03" target="_blank"><i class="fa fa-github" style="font-size: 20px;"></i></a></li>
-                        <li class="nav-item"><a class="nav-link px-2 text-body-secondary" href="https://www.linkedin.com/in/kieran-pritchard-20a270193/" target="_blank"><i class="fa fa-linkedin" style="font-size: 20px;"></i></a></li>
-                    </ul>
-                </li>
-            </ul>
-        </footer>
-    </body>
+	<main>
+		<div class="container">
+			<!-- Breadcrumbs -->
+			<nav class="breadcrumbMargin" aria-label="breadcrumb">
+				<ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
+				<li class="breadcrumb-item">
+					<a class="link-body-emphasis" href="index.html">
+						<i class="fa fa-home"></i>
+						<span class="visually-hidden">Home</span>
+					</a>
+				</li>
+				<li class="breadcrumb-item">
+					<a class="link-body-emphasis" href="index.html">
+						<span>Home</span>
+					</a>
+				</li>
+				<li class="breadcrumb-item active" aria-current="page">
+					About
+				</li>
+				</ol>
+			</nav>
+
+			<!-- Canvas -->
+			<div class="row">
+				<div class="col-12">
+					<!-- <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:970px; height:250px">
+						<canvas id="canvas" width="970" height="250" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+						<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:970px; height:250px; position: absolute; left: 0px; top: 0px; display: block;">
+						</div>
+					</div> -->
+					<div id="animation_container" class="w-100" style="max-width: 970px; margin: auto; background-color:rgba(255, 255, 255, 1.00);">
+						<canvas id="canvas" class="w-100"></canvas>
+						<div id="dom_overlay_container" class="w-100">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	
+	<footer class="justify-content-between align-items-center border-top">
+		<ul class="list-unstyled">
+			<li><b>Developed by:</b> Kieran Pritchard</li>
+			<li><b>Tech Stack:</b> HTML5, CSS, JavaScript, Bootstrap</li>
+			<li><b>Developed for:</b> Dynamic Website Development (IS2S563) Coursework 2</li>
+			<li>
+				<ul class="nav justify-content-center">
+					<li class="nav-item"><a class="nav-link px-2 text-body-secondary" href="https://github.com/TotalDwarf03" target="_blank"><i class="fa fa-github" style="font-size: 20px;"></i></a></li>
+					<li class="nav-item"><a class="nav-link px-2 text-body-secondary" href="https://www.linkedin.com/in/kieran-pritchard-20a270193/" target="_blank"><i class="fa fa-linkedin" style="font-size: 20px;"></i></a></li>
+				</ul>
+			</li>
+		</ul>
+	</footer>
+</body>
 </html>
