@@ -104,6 +104,25 @@ function handleComplete(evt,comp) {
 }
 </script>
 <!-- write your code here -->
+
+<script>
+	function removeFrameContent(){
+		// Script to remove Iframe header and footer
+		iframe = document.getElementById("contactForm");
+		console.log(document.getElementById("contactForm"));
+
+		var iframeDocument = iframe.contentWindow.document;
+
+		header = iframeDocument.getElementById("header");
+		header.remove();
+
+		breadcrumbs = iframeDocument.getElementById("breadcrumbs");
+		breadcrumbs.remove();
+
+		footer = iframeDocument.getElementById("footer");
+		footer.remove();
+	}
+</script>
 </head>
 <body style="margin:0px;">
 	<header>
@@ -191,7 +210,7 @@ function handleComplete(evt,comp) {
 
 			<!-- Canvas -->
 			<div class="row">
-				<div class="col-12">
+				<div class="col-12 rounded" style="background-color:rgba(255, 255, 255, 1.00);">
 					<!-- <div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:970px; height:250px">
 						<canvas id="canvas" width="970" height="250" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
 						<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:970px; height:250px; position: absolute; left: 0px; top: 0px; display: block;">
@@ -200,6 +219,132 @@ function handleComplete(evt,comp) {
 					<div id="animation_container" class="w-100" style="max-width: 970px; margin: auto; background-color:rgba(255, 255, 255, 1.00);">
 						<canvas id="canvas" class="w-100"></canvas>
 						<div id="dom_overlay_container" class="w-100">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-12 col-lg-4 bg-body-secondary h-100 rounded text-center">
+					<img src="Images/portrait.jpg" alt="A Photo of Kieran Pritchard" class="img-fluid w-100 rounded-circle pad10">
+					<h2>Kieran Pritchard</h2>
+					<h3><i>Apprentice Software Developer</i></h3>
+					<p>
+						A <b>part-time university student</b>, studying <b>BSc Computing</b> under the <b>Network 75 Scheme</b> at the University of South Wales.
+						A <b>hardworking</b> and <b>passionate</b> student with an interest in Software Development - having a wide range of skills from
+						<b>database design and reporting technologies</b> to <b>software design and development</b>.
+					</p>
+				</div>
+
+				<div class="col-12 col-lg-8">
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs">
+						<li class="nav-item">
+							<a class="nav-link active" data-bs-toggle="tab" href="#AboutMe">About Me</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" href="#WheretoFindme">Where to Find me</a>
+						</li>
+					</ul>
+					
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div class="tab-pane container active pad10" id="AboutMe">
+							<h3>Hi!</h3>
+							<p>
+								I'm Kieran, an apprentice software developer. 
+							</p>
+							<p>
+								I've always enjoyed the technical aspects of everything - how things work and how they can be improved.
+								Since I was young, I enjoyed creating <i>"things"</i>. I used to spend hours building Lego and turning sets into my
+								own creations. It was no supprise that I'd end up going down one of the engineering branches.
+							</p>
+							<p>
+								As I got older, I began to enjoy the digital world more and more. I enjoyed playing videogames as most people do nowadays,
+								having a Nintendo Wii and eventually an Xbox 360. I began to spend more time being online so it was obvious that I'd have a 
+								fondness for ICT in school. It was through school that I gained an interest in a block programming language called Scratch.
+								Me and my friends would spend ages creating, sharing and browsing Scratch projects which I think really gave me the bug for
+								software development.
+							</p>
+							<p>
+								Since then, I've become really invested in becoming a developer. I've enjoyed seeing technology grow and hope to be apart of 
+								and on the forefront of that growth in the future.
+							</p>
+						</div>
+						<div class="tab-pane container fade pad10" id="WheretoFindme">
+							<h3>Socials:</h3>
+
+							<div class="pad20">
+								<div>
+									<h4>Github:</h4>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#GithubModal">
+										<i class="fa fa-github icon32"></i>
+									</button>
+									
+									<!-- Modal -->
+									<div class="modal fade" id="GithubModal" tabindex="-1" aria-labelledby="GithubModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="GithubModalLabel">Redirecting to Github...</h5>
+												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+											</div>
+											<div class="modal-body">
+												You're leaving TotalDwarf.dev and being redirected to Github. Are you sure you want to do this?
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+												<button type="button" class="btn btn-primary" onclick="window.location.href = 'https://github.com/TotalDwarf03'">Take me to Github!</button>
+											</div>
+										</div>
+										</div>
+									</div>
+								</div>
+								
+								<div>
+									<h4>Linkedin:</h4>
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#LinkedinModal">
+										<i class="fa fa-linkedin-square icon32"></i>
+									</button>
+									
+									<!-- Modal -->
+									<div class="modal fade" id="LinkedinModal" tabindex="-1" aria-labelledby="LinkedinModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="LinkedinModalLabel">Redirecting to Linkedin...</h5>
+												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+											</div>
+											<div class="modal-body">
+												You're leaving TotalDwarf.dev and being redirected to Linkedin. Are you sure you want to do this?
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+												<button type="button" class="btn btn-primary" onclick="window.location.href = 'https://www.linkedin.com/in/kieran-pritchard-20a270193/'">Take me to Linkedin!</button>
+											</div>
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<h3>Contact:</h3>
+							
+							<div class="pad20">
+								<ul class="list-unstyled">
+									<li><b>Mobile: </b><a class="text-body" href="tel:07951357755">07951 357755</a></li>
+									<li><b>Email: </b><a class="text-body" href="mailto:kierock03@gmail.com">Kierock03@gmail.com</a></li>
+								</ul>
+								
+								<p>or use my <a class="text-body" href="contact.html"><b>Contact Form</b></a>.</p>
+
+								<iframe id="contactForm" class="border rounded" src="contact.html" width="100%" height="300px" onload="removeFrameContent()" style="pointer-events: none;">
+
+								</iframe>
+							</div>
+
 						</div>
 					</div>
 				</div>
