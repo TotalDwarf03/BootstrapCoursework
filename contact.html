@@ -48,6 +48,16 @@
         <script
             src="Scripts/script.js"
         ></script>
+
+        <!-- JQuery Date Picker -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script>
+            $( function() {
+            $( "#ReturnDate" ).datepicker({ minDate: 0 });
+            } );
+        </script>
     </head>
 
     <body>
@@ -133,6 +143,96 @@
                     </li>
                     </ol>
                 </nav>
+
+                
+                <div class="row border rounded">
+                    <div class="col-6 col-lg-4 bg-body-secondary text-center">
+                        <h3>Get in Touch:</h3>
+
+                        <ul class="list-unstyled">
+                            <li class="pad10">
+                                <i class="fa fa-phone"></i> <b>Mobile: </b>
+                                <br>
+                                <a class="text-body" href="tel:07951357755">07951 357755</a>
+                            </li>
+                            <li class="pad10">
+                                <i class="fa fa-paper-plane "></i> <b>Email: </b>
+                                <br><a class="text-body" href="mailto:kierock03@gmail.com">Kierock03@gmail.com</a>
+                            </li>
+                            <li class="pad10">
+                                <button type="button" class="btn btn-primary" onclick="window.location.href = 'https://github.com/TotalDwarf03'">
+                                    <i class="fa fa-github"></i> Github
+                                </button>
+                                <button type="button" class="btn btn-secondary" onclick="window.location.href = 'https://www.linkedin.com/in/kieran-pritchard-20a270193/'">
+                                    <i class="fa fa-linkedin-square"></i> Linkedin
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="col-6 col-lg-8">
+                        <form>
+                            <fieldset>
+                                <legend>Contact Information:</legend>
+                                <div class="row m-2">
+                                    <div class="col">
+                                        <label for="name" class="form-label">Name:</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Name" required>
+                                    </div>
+        
+                                    <div class="col">
+                                        <label for="tel" class="form-label">Tel:</label>
+                                        <input type="tel" class="form-control" id="tel" placeholder="Telephone">
+                                    </div>
+        
+                                    <div class="col">
+                                        <label for="email" class="form-label">Email:</label>
+                                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Message:</legend>
+
+                                <div class="row m-2">
+                                    <div class="w-25">
+                                        <label class="form-label" for="ReturnDate">Return Date:</label>
+                                        <input id="ReturnDate" type="text" class="form-control" required>
+                                    </div>
+
+                                    <div class="w-75">
+                                        <label for="subject" class="form-label">Subject:</label>
+                                        <input id="subject" type="text" class="form-control" placeholder="Subject" required>
+                                    </div>
+                                </div>
+
+                                <div class="row m-2">
+                                    <div class="col">
+                                        <textarea id="message" class="form-control" rows="3" placeholder="Message" required></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <div class="row m-2">
+                                    <div class="form-check pad20">
+                                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                        <label class="form-check-label" for="invalidCheck">
+                                            Agree to terms and conditions
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            You must agree before submitting.
+                                        </div>
+                                    </div>
+    
+                                    <div class="align-content-center">
+                                        <button id="submit" class="btn btn-primary w-25" type="submit">Send</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
             </div>
 
         </main>
