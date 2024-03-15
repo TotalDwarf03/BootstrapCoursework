@@ -119,6 +119,13 @@ function handleComplete(evt,comp) {
 		breadcrumbs = iframeDocument.getElementById("breadcrumbs");
 		breadcrumbs.remove();
 
+		contactDetails = iframeDocument.getElementById("ContactDetails");
+		contactDetails.remove();
+
+		contactForm = iframeDocument.getElementById("ContactForm");
+		contactForm.classList.remove("col-6");
+		contactForm.classList.add("col-12");
+
 		footer = iframeDocument.getElementById("footer");
 		footer.remove();
 	}
@@ -341,7 +348,7 @@ function handleComplete(evt,comp) {
 								<p>or use my <a class="text-body" href="contact.html"><b>Contact Form</b></a>.</p>
 
 								<div class="text-center">
-									<iframe id="contactForm" class="border rounded" src="contact.html" width="100%" height="300px" onload="removeFrameContent()" style="pointer-events: none;"></iframe>
+									<iframe id="contactForm" class="border rounded" src="contact.html" width="100%" height="500px" onload="removeFrameContent()" style="pointer-events: none;"></iframe>
 									<a class="btn btn-primary" href="contact.html">Go to Contact Form</a>
 								</div>
 							</div>
